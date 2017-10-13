@@ -1,0 +1,49 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="iaia.content">
+
+  <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
+  <include package="z3c.jbot" file="meta.zcml" />
+  <browser:jbot
+      directory="overrides"
+      layer="iaia.content.interfaces.IIaiaContentLayer"
+      />
+
+  <!-- Publish static files -->
+  <plone:static
+      name="iaia.content"
+      type="plone"
+      directory="static"
+      />
+
+  <browser:page
+      name="Cover"
+      for="*"
+      class=".views.CoverView"
+      layer="zope.interface.Interface"
+      permission="zope2.View"
+      />
+  <browser:page
+      name="Faq"
+      for="*"
+      class=".views.FaqView"
+      layer="zope.interface.Interface"
+      permission="zope2.View"
+      />
+  <browser:page
+      name="FaqListView"
+      for="*"
+      class=".views.FaqListView"
+      layer="zope.interface.Interface"
+      permission="zope2.View"
+      />
+  <browser:page
+      name="Media"
+      for="*"
+      class=".views.Media"
+      layer="zope.interface.Interface"
+      permission="zope2.View"
+      />      
+</configure>
