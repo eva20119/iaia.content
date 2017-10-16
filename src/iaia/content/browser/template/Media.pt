@@ -12,8 +12,8 @@
                     tal:define="toc context/table_of_contents|nothing;">
     
     
-    <iframe tal:define="url python:view.get_url()" width="560" height="315" src="${url}" 
-    frameborder="0" allowfullscreen></iframe>
+    <div tal:content="structure context/youtube">
+    </div>
        
 
 </metal:content-core>

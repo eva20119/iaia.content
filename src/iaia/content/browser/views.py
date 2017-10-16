@@ -1,29 +1,42 @@
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone import api
-
+from bs4 import BeautifulSoup
+import random
 
 class CoverView(BrowserView):
     template = ViewPageTemplateFile('template/Cover.pt')
  
     def get_media(self):
-        results = []
+        portal=api.portal.get()
+        result_media = []
         i=1
-        brains = api.content.find(context=api.portal.get(), portal_type='Media')
-        for brain in brains:
-            item = brain.getObject()
-            url=item.url.split('watch?v=')[0]+'embed/'+item.url.split('watch?v=')[1]
+        brains = api.content.find(context=portal['media_platform'], portal_type='Media',
+        sort_on='created', sort_order='reverse', sort_limit=3)
 
-            results.append({
-                'title':item.title,
-                'description':item.description,
-                'url':str(url),
-                'count':i
-            })
-            i+=1
-        return results
+        return brains
         
+    def get_news_item(self):
+        portal=api.portal.get()
+        result_news_item = []
+        i=1
+        brains = api.content.find(context=portal['news'], portal_type='News Item',
+        sort_on='created', sort_order='reverse', sort_limit=10)
 
+        return brains
+
+    def get_document(self):
+        portal=api.portal.get()
+        result_document = []
+        i=1
+        brains = api.content.find(context=portal['economy']['market'], portal_type='Document',
+        sort_on='created', sort_order='reverse', sort_limit=10)
+
+        brains=list(brains)
+        random.shuffle(brains)
+
+        return brains
+    
     def __call__(self):
          return self.template()
 
@@ -51,13 +64,5 @@ class FaqListView(BrowserView):
 class Media(BrowserView):
     template = ViewPageTemplateFile('template/Media.pt')
 
-    def get_url(self):
-        url=self.context.url
-        url0=url.split('watch?v=')[0]
-        url1=url.split('watch?v=')[1]
-        newUrl=url0+'embed/'+url1
-        return newUrl
-
     def __call__(self):
-    
         return self.template()

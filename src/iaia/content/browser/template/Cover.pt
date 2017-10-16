@@ -10,21 +10,38 @@
 <metal:content-core fill-slot="content-core">
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
-     <div>
-         <p tal:content="context/title"></p>
-         <p tal:content="context/description"></p>
-    </div>
+     
 
     <div tal:define="mediaList python:view.get_media()"
          tal:repeat="media mediaList">
-        <p tal:content="media/title"></p>
-        <iframe tal:define="num media/count" id="film${num}" width="560" height="315" 
-        src="${media/url}" frameborder="0" allowfullscreen 
-        ></iframe>
-
+        <p tal:content="media/Title" ></p>
+        <p tal:content="media/Description"></p>
+        <div tal:define="film python:media.getObject()"
+             tal:content="structure film/youtube"></div>
     </div> 
-  
+    
 
+    <div tal:define="images python:['cover_image1','cover_image2','cover_image3',
+                    'cover_image4','cover_image5']">
+        <img tal:repeat="image images"
+            tal:attributes="src string:${context/absolute_url}/@@images/${image}">
+    </div>
+    
+    <div tal:define="news_items python:view.get_news_item()"
+         tal:repeat="news news_items">
+         <p tal:content="news/Title"></p>
+         <p tal:content="news/Description"></p>
+    </div>
+
+    <div tal:define="documentList python:view.get_document()"
+         tal:repeat="documents documentList">
+        
+        <div tal:define="doc  python:documents.getObject()">
+            <p tal:content="doc/title"></p>
+            <img tal:condition="nocall:doc/image"
+                 tal:attributes="src string:${documents/getURL}/@@images/image" />
+        </div>
+    </div>
 </metal:content-core>
 </metal:content-core>
 

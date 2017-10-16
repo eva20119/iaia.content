@@ -23,23 +23,23 @@ class ICover(Interface):
         title=_(u'描述'),
         required=False,
     )
-    CoverView_1 = NamedBlobImage(
+    cover_image1 = NamedBlobImage(
         title=_(u"Cover Image"),
         required=False,
     )
-    CoverView_2 = NamedBlobImage(
+    cover_image2 = NamedBlobImage(
         title=_(u"Cover Image"),
         required=False,
     )
-    CoverView_3 = NamedBlobImage(
+    cover_image3 = NamedBlobImage(
         title=_(u"Cover Image"),
         required=False,
     )
-    CoverView_4 = NamedBlobImage(
+    cover_image4 = NamedBlobImage(
         title=_(u"Cover Image"),
         required=False,
     )
-    CoverView_5 = NamedBlobImage(
+    cover_image5 = NamedBlobImage(
         title=_(u"Cover Image"),
         required=False,
     )
@@ -69,7 +69,7 @@ class IMedia(Interface):
         title=_(u'描述'),
         required=False,
     )
-    url = schema.TextLine(
-        title=_(u'網址'),
+    youtube = schema.Text(
+        title=_(u'嵌入影片'),
         required=False,
     )
