@@ -47,10 +47,6 @@ class ICover(Interface):
 
 class IFaq(Interface):
     title = schema.TextLine(
-        title=_(u'標題'),
-        required=False,
-    )
-    question = schema.TextLine(
         title=_(u'問題'),
         required=False,
     )

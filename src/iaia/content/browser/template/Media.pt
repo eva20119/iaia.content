@@ -11,9 +11,12 @@
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
     
-    
-    <div tal:content="structure context/youtube">
-    </div>
+    <h1 tal:content="context/title"
+        class="custom_youtube_title"></h1>
+    <p tal:content="context/description"
+       class="custom_youtube_description"></p>
+    <div tal:define="youtube python:view.get_youtube()"
+         tal:content="structure youtube"></div>
        
 
 </metal:content-core>
