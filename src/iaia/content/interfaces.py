@@ -16,11 +16,11 @@ class IIaiaContentLayer(IDefaultBrowserLayer):
 
 class ICover(Interface):
     title = schema.TextLine(
-        title=_(u'標題'),
+        title=_(u'Title'),
         required=False,
     )
     description = schema.Text(
-        title=_(u'描述'),
+        title=_(u'Description'),
         required=False,
     )
     cover_image1 = NamedBlobImage(
@@ -47,25 +47,25 @@ class ICover(Interface):
 
 class IFaq(Interface):
     title = schema.TextLine(
-        title=_(u'問題'),
+        title=_(u'Question'),
         required=False,
     )
     answer = RichText(
-        title=_(u'回答'),
+        title=_(u'Answer'),
         required=False,
     )
 
 
 class IMedia(Interface):
     title = schema.TextLine(
-        title=_(u'標題'),
+        title=_(u'Title'),
         required=False,
     )
     description = schema.Text(
-        title=_(u'描述'),
+        title=_(u'Description'),
         required=False,
     )
     youtube = schema.Text(
-        title=_(u'嵌入影片'),
+        title=_(u'Youtube Embed url'),
         required=False,
     )
