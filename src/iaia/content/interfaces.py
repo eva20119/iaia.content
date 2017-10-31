@@ -43,7 +43,7 @@ class ICover(Interface):
         title=_(u"Cover Image"),
         required=False,
     )
-   
+
 
 class IFaq(Interface):
     title = schema.TextLine(

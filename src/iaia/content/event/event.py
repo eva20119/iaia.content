@@ -1,5 +1,5 @@
 
- 
+
 def moveContentToTop(item, event):
 
     folder = item.getParentNode()

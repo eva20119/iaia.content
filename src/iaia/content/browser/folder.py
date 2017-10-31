@@ -82,18 +82,6 @@ class FolderView(BrowserView):
         )
         return batch
 
-    # def get_default(self):
-    #     portal=api.portal.get()
-    #     brains = api.content.find(context=portal['default'], portal_type='Document')
-
-    #     for brain in brains:
-    #        """"""
-            
-    #     return brain
-    def hello(self):
-        result="hello"
-        import pdb;pdb.set_trace()
-        return result
 
     def normalizeString(self, text):
         return self.plone_view.normalizeString(text)
@@ -189,7 +177,6 @@ class FolderView(BrowserView):
             IContentProvider, name='formatted_date'
         )
         return provider(item)
-    
     
 
     @property

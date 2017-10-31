@@ -18,9 +18,6 @@ class IUserDefault(Form.Schema):
     )
 
 
-
-
-
 class UserDefaultControlPanelForm(RegistryEditForm):
     form.extends(RegistryEditForm)
     schema = IUserDefault
