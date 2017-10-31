@@ -60,7 +60,8 @@ class CoverView(BrowserView):
     
 
     def __call__(self):
-         return self.template()
+  
+        return self.template()
 
 
 class FaqView(BrowserView):
@@ -102,3 +103,12 @@ class Media(BrowserView):
     def __call__(self):
         return self.template()
 
+class LoginView(BrowserView):
+    template = ViewPageTemplateFile('template/user_login.pt')
+
+    def __call__(self):
+        return template
+
+
+
+    

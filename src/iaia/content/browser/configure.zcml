@@ -64,4 +64,17 @@
       layer="zope.interface.Interface"
       permission="zope2.View"
       />
+  <browser:page
+      name="user_login"
+      for="*"
+      class=".views.LoginView"
+      layer="zope.interface.Interface"
+      permission="zope2.View"
+      />
+  <browser:page
+    name="UserDefaultControlPanel"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    class=".UserDefault.UserDefaultControlPanelView"
+    permission="cmf.ManagePortal"
+  />
 </configure>
