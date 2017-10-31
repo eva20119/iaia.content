@@ -12,18 +12,15 @@ class CoverView(BrowserView):
     def get_media(self):
         portal = api.portal.get()
         media_result = []
-        count = 1
         brains = api.content.find(context=portal['media_platform'], portal_type='Media',
-        sort_on='created', sort_order='reverse', sort_limit=4)
+            sort_on='created', sort_order='reverse', sort_limit=4)
         for brain in brains:
             item = brain.getObject()
             media_result.append({
                 'title': item.title,
                 'description': item.description,
                 'youtube': item.youtube,
-                'count': count
             })
-            count += 1
         return media_result
 
     def get_news_item(self):
@@ -31,7 +28,7 @@ class CoverView(BrowserView):
         result_news_item = []
 
         brains = api.content.find(context=portal['news'], portal_type='News Item',
-        sort_on='created', sort_order='reverse', sort_limit=10, review_state='published')[0:10]
+            sort_on='created', sort_order='reverse', sort_limit=10, review_state='published')[0:10]
 
         return brains
 
@@ -46,7 +43,7 @@ class CoverView(BrowserView):
         portal = api.portal.get()
 
         brains = api.content.find(context=portal['economy']['market'], portal_type='Document',
-        sort_on='created', sort_order='reverse', sort_limit=10)
+            sort_on='created', sort_order='reverse', sort_limit=10)
 
         brains = list(brains)
         random.shuffle(brains)
@@ -60,13 +57,6 @@ class CoverView(BrowserView):
 
     def __call__(self):
         return self.template()
-
-
-class FaqView(BrowserView):
-    # template = ViewPageTemplateFile('template/CoverView.pt')
-
-    def __call__(self):
-        return
 
 
 class FaqListView(BrowserView):
@@ -108,3 +98,5 @@ class LoginView(BrowserView):
 
     def __call__(self):
         return template
+
+

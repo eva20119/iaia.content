@@ -10,12 +10,16 @@ from .. import _
 class IUserDefault(Form.Schema):
     footer = schema.Text(
         title=_(u"Footer Information"),
-        required=False,
+        required=False
     )
     phone = schema.TextLine(
         title=_(u'Phone Number'),
         required=False
     )
+    email = schema.TextLine(
+         title=_(u'Contact Email'),
+         required=False
+     )
 
 
 class UserDefaultControlPanelForm(RegistryEditForm):

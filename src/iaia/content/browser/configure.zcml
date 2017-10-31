@@ -27,13 +27,6 @@
       permission="zope2.View"
       />
   <browser:page
-      name="Faq"
-      for="*"
-      class=".views.FaqView"
-      layer="zope.interface.Interface"
-      permission="zope2.View"
-      />
-  <browser:page
       name="FaqListView"
       for="*"
       class=".views.FaqListView"
