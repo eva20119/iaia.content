@@ -9,10 +9,13 @@ from .. import _
 
 class IUserDefault(Form.Schema):
     footer = schema.Text(
-        title=_(u"footer information"),
+        title=_(u"Footer Information"),
         required=False,
     )
-
+    phone = schema.TextLine(
+        title=_(u'Phone Number'),
+        required=False
+    )
 
 
 
