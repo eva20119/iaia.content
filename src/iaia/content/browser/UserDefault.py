@@ -17,9 +17,21 @@ class IUserDefault(Form.Schema):
         required=False
     )
     email = schema.TextLine(
-         title=_(u'Contact Email'),
-         required=False
-     )
+        title=_(u'Contact Email'),
+        required=False
+    )
+    mini_nav = schema.Text(
+        title=_(u'Mini Nav'),
+        required=False
+    )
+    scenery = schema.Text(
+        title=_(u'Scenry'),
+        required=False
+    )
+    countdown = schema.Text(
+        title=_(u'countdown'),
+        required=False
+    )
 
 
 class UserDefaultControlPanelForm(RegistryEditForm):

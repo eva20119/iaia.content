@@ -1,6 +1,3 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -15,35 +12,35 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: iaia.content\n"
+"Domain: DOMAIN\n"
 
 #: ./interfaces.py:54
 msgid "Answer"
-msgstr ""
+msgstr "答案"
 
 #: ./browser/UserDefault.py:20
 msgid "Contact Email"
-msgstr ""
+msgstr "連繫用信箱"
 
 #: ./profiles/default/types/Cover.xml
 msgid "Cover"
-msgstr ""
+msgstr "封面"
 
 #: ./interfaces.py:27
 msgid "Cover Image"
-msgstr ""
+msgstr "封面圖片"
 
 #: ./interfaces.py:23
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ./profiles/default/types/Faq.xml
 msgid "Faq"
-msgstr ""
+msgstr "問與答"
 
 #: ./browser/UserDefault.py:12
 msgid "Footer Information"
-msgstr ""
+msgstr "頁腳訊息"
 
 #: ./configure.zcml:21
 msgid "Installs the iaia.content add-on."
@@ -51,27 +48,27 @@ msgstr ""
 
 #: ./profiles/default/types/Media.xml
 msgid "Media"
-msgstr ""
+msgstr "影音媒體"
 
 #: ./browser/UserDefault.py:24
 msgid "Mini Nav"
-msgstr ""
+msgstr "小型導覽列"
 
 #: ./browser/UserDefault.py:16
 msgid "Phone Number"
-msgstr ""
+msgstr "電話號碼"
 
 #: ./interfaces.py:50
 msgid "Question"
-msgstr ""
+msgstr "問題"
 
 #: ./browser/UserDefault.py:28
 msgid "Scenry"
-msgstr ""
+msgstr "佈景"
 
 #: ./interfaces.py:19
 msgid "Title"
-msgstr ""
+msgstr "標題"
 
 #: ./configure.zcml:30
 msgid "Uninstalls the iaia.content add-on."
@@ -79,26 +76,26 @@ msgstr ""
 
 #: ./browser/UserDefault.py:42
 msgid "User Default"
-msgstr ""
+msgstr "使用者初始資料"
 
 #: ./profiles/default/controlpanel.xml
 msgid "User Default Setup"
-msgstr ""
+msgstr "使用者初始資料"
 
 #: ./interfaces.py:69
 msgid "Youtube Embed url"
-msgstr ""
+msgstr "嵌入Youtube網址"
 
 #: ./browser/UserDefault.py:32
 msgid "countdown"
-msgstr ""
+msgstr "倒數計時"
 
 #. Default: "View"
 #: ./profiles/default/types/Cover.xml
 #: ./profiles/default/types/Faq.xml
 #: ./profiles/default/types/Media.xml
 msgid "description"
-msgstr ""
+msgstr "描述"
 
 #. Default: "There are currently no items in this folder."
 #: ./browser/folder.py:223
